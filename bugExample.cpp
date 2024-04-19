@@ -66,14 +66,27 @@ int main() {
             case 3:
                 displayArray(total, SIZE);
                 break;
-                // Exit
+                // Sum odd numbers
             case 4:
-                // No code needed
+                sumOddArray(price, SIZE);
+                break;
+                // Check if all positive
+            case 5:
+                isAllPositive(price, SIZE);
+                break;
+                // Average of odd numbers
+            case 6:
+                int avgOdd;
+                avgOddArray(price, SIZE, avgOdd);
+                cout << "\nThe average of all the odd numbers is: " << avgOdd;
+                break;
+            case 7:
+
                 break;
             default:
                 assert(true);
         }
-    } while (choice != 4);
+    } while (choice != 7);
 
     cout << "\nHave a nice day:)" << endl;
     return 0;
@@ -93,15 +106,19 @@ int printMenu(){
         cout << "\n1) Enter quantity";
         cout << "\n2) Calculate total";
         cout << "\n3) Print total";
-        cout << "\n4) Exit";
+        cout << "\n4) Sum odd numbers";
+        cout << "\n5) Check if all positive";
+        cout << "\n6) Average of odd numbers";
+        cout << "\n7) Exit";
 
         cout << "\nEnter the choice: ";
         cin >> choice;
 
-        if (choice < 1 || choice > 4){
+        if (choice < 1 || choice > 7){
             cout << "\nWrong choice, try again.";
         }
-    } while (choice < 1 || choice > 5);
+    } while (choice < 1 || choice > 7);
+
     return choice;
 }
 
