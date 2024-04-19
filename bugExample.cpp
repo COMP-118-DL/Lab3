@@ -48,6 +48,7 @@ int main() {
     for (int i = 0; i < SIZE; ++i){
         price[i] = rand() % 100;
     }
+
     // Interactive menu
     do {
         choice = printMenu();
@@ -132,8 +133,9 @@ void fillInArray(int arr[], const int size){
 void multArrays(const int arrQuantity[], const int arrPrice[], int arrTotal[], const int size){
     assert (size > 0);
 
+    double VAT = 0.21;
     for (int i = 0; i <= size; ++i){
-        arrTotal[i] = arrQuantity[i] * arrPrice[i];
+        arrTotal[i] = arrQuantity[i] * arrPrice[i] * (1 + VAT);
     }
 }
 
